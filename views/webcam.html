@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>web 端的人脸识别</title>
+
+    <!--这里注意一下引用顺序，我们需要引入 face-api.min.js 这个依赖。只支持HTTP或HTTPS访问-->
+    <script defer src="face-api.min.js"></script>
+    <script defer src="script.js"></script>
+
+    <!--简单地给样式-->
+    <!--创建一个画布,绘制人脸识别框,这里我们创建一个 canvas 用于将识别出来数据绘制到视频上，canvas 可以用 js 动态创建-->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        canvas {
+            position: absolute;
+
+        }
+    </style>
+
+</head>
+<body>
+
+<!--创建一个 video 标签来捕捉人脸
+    autoplay 属性规定一旦视频就绪马上开始播放。如果设置了该属性，视频将自动播放。
+    muted 属性设置或返回音频/视频是否应该被静音（关闭声音）。-->
+    <video id="video" width="720" height="560" autoplay muted></video>
+
+</body>
+
+</html>
